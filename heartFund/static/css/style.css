@@ -183,9 +183,9 @@ nav li:first-child {
 .project-card p { color: #444; line-height: 1.7; font-size: 1rem; flex-grow: 1; }
 
 /* Edit and Delete buttons */
-.project-card button.edit-btn { background: #007bff; color: #fff; }
+.project-card button.edit-btn { background: #007bff; color: #fff; margin:5px}
 .project-card button.edit-btn:hover { background: #0056b3; }
-.project-card button.delete-btn { background: #dc3545; color: #fff; }
+.project-card button.delete-btn { background: #dc3545; color: #fff; margin:5px}
 .project-card button.delete-btn:hover { background: #a71d2a; }
 
 
@@ -411,4 +411,41 @@ nav li:first-child {
 }
 .cancel:hover{
   background: #a71d2a;
+}
+/* Style the date input */
+input[type="date"] {
+  padding: 0.8rem 1rem;
+  border: 1px solid #ccd6f6;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #333;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="date"]:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(216, 164, 87, 0.25);
+  outline: none;
+}
+
+input[type="date"]::placeholder {
+  color: #888;
+  font-style: italic;
+}
+.search{
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  background-color: #007bff;
+  transition: background 0.3s;
+}
+
+.search:hover {
+  background: #0b6cd4;
 }

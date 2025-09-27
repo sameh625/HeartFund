@@ -6,9 +6,8 @@ class RegisterForm(forms.ModelForm):
     conf_pass = forms.CharField(widget=forms.PasswordInput, label="Confirm Password")
     payment_info = forms.CharField(
         max_length=255,
-        required=False,
-        help_text="Optional: Add your PayPal email, bank account number, or wallet ID"
-    )
+        required=False
+        )
     class Meta:
         model = CustomUser
         fields = ["first_name", "last_name","payment_info", "email", "phone"]

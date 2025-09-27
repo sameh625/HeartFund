@@ -1,33 +1,31 @@
-body {
-  background: linear-gradient(135deg, #D3DAD9, #f8faff);
-  display: block;
-  
-  min-height: 100vh;
-  font-family: "Montserrat", sans-serif;
-  margin: 0;
-}
-
 .auth-container {
   margin: 20px auto;
   background: #fff;
   min-height: 500px;
-  padding: 6rem 2.5rem 5rem ;
+  padding: 6rem 2.5rem 5rem;
   border-radius: 14px;
-  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
   width: 100%;
   max-width: 600px;
   animation: fadeIn 0.4s ease-in-out;
+  margin-top: 60px;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .auth-container h2 {
   margin-bottom: 1.5rem;
   text-align: center;
-  color: #37353E;
+  color: #37353e;
   font-weight: 700;
 }
 
@@ -49,7 +47,7 @@ body {
 }
 
 .auth-container input:focus {
-  border-color: #37353E;
+  border-color: #37353e;
   box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.15);
   outline: none;
 }
@@ -57,7 +55,7 @@ body {
 .auth-container button {
   width: 100%;
   padding: 0.85rem;
-  background: #37353E;
+  background: #37353e;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -68,7 +66,7 @@ body {
 }
 
 .auth-container button:hover {
-  background: #715A5A;
+  background: #715a5a;
 }
 
 .auth-container button:active {
@@ -84,14 +82,14 @@ body {
 }
 
 .auth-container a {
-  color: #37353E;
+  color: #37353e;
   font-weight: 600;
   text-decoration: none;
 }
 
 .auth-container a:hover {
   text-decoration: underline;
-  color: #715A5A;
+  color: #715a5a;
 }
 
 /* Django messages */
@@ -134,7 +132,8 @@ body {
 }
 
 /* Form errors */
-.form-errors, .errorlist {
+.form-errors,
+.errorlist {
   background: #fff1f0;
   color: #a8071a;
   border: 1px solid #ffa39e;
@@ -142,14 +141,5 @@ body {
   border-radius: 6px;
   margin-bottom: 1rem;
   font-size: 0.9rem;
-}
-
-.errorlist {
-  list-style: none;
-  margin: 0.3rem 0 0.8rem 0;
-  padding: 0;
-}
-
-.errorlist li {
-  margin: 0;
+  list-style-type: none;
 }

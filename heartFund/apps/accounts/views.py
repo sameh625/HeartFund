@@ -1,13 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
-from django.contrib.auth.models import User
 from django.contrib import messages
 from .forms import RegisterForm
-from .models import CustomUser
 
 def register_view(request):
     if request.user.is_authenticated:
-        messages.info(request, "You are already logged in.")
         return redirect("home:index") 
     if request.method == "POST":
         form = RegisterForm(request.POST)
@@ -23,7 +20,6 @@ def register_view(request):
 
 def login_view(request):
     if request.user.is_authenticated:
-        messages.info(request, "You already have an account.")
         return redirect("home:index")
     if request.method == "POST":
         email = request.POST.get("email")
@@ -42,5 +38,6 @@ def login_view(request):
     
 
 def logout_view(request):
+    messages.info(request, "Hope to see you again!")
     logout(request)
     return redirect("accounts:login")

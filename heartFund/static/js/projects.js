@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
           <h3>${project.title}</h3>
           <p><strong>Publisher:</strong> ${project.owner}</p>
           <p><strong>Target:</strong> ${project.target} EGP</p>
-          <p><strong>Support:</strong> ${project.payment_info}</p>
           <p><strong>Duration:</strong> ${project.start_date} → ${project.end_date}</p>
           <button class="btn-view" data-id="${project.id}">View</button>
         `;
