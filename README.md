@@ -6,6 +6,7 @@ HeartFund is a crowdfunding web application built with **Django** and **JavaScri
 
 ## 🚀 Features
 
+
 ### 🔐 Authentication
 - User registration with:
   - First name & last name
@@ -74,4 +75,7 @@ Visit 👉 http://127.0.0.1:8000
 | GET    | `/projects/api/mine/`                                   | List logged-in user’s projects       |
 | GET    | `/projects/api/search/?start=YYYY-MM-DD&end=YYYY-MM-DD` | Search projects by date              |
 
+---
+## Video Demo 
+[Screencast from 27 سبت, 2025 EEST 06:41:02 م.webm](https://github.com/user-attachments/assets/4447b60a-9ad1-4b9a-9f64-ded944a7955c)
 
