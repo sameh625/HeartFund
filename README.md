@@ -1,6 +1,6 @@
 #  HeartFund – Crowdfunding Platform
 
-HeartFund is a crowdfunding web application built with **Django** and **JavaScript**, where users can register, create projects, manage their own campaigns, and support others’ ideas.  
+HeartFund is a crowdfunding web application built with **Django** and **JavaScript**, where users can register, create projects, manage their own campaigns, and support others' ideas.  
 
 ---
 
