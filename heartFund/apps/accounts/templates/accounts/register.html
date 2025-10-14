@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/auth.css' %}">
+
+<div class="auth-container">
+  <h2>Register</h2>
+
+  {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+        <li class="{{ message.tags }}">{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <form method="post">
+    {% csrf_token %}
+
+    {% if form.non_field_errors %}
+      <div class="form-errors">
+        {% for error in form.non_field_errors %}
+          <p>{{ error }}</p>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <label>First Name:</label>
+    {{ form.first_name }}
+    {{ form.first_name.errors }}
+
+    <label>Last Name:</label>
+    {{ form.last_name }}
+    {{ form.last_name.errors }}
+
+    <label>Email:</label>
+    {{ form.email }}
+    {{ form.email.errors }}
+
+    <label>Mobile Phone:</label>
+    {{ form.phone }}
+    {{ form.phone.errors }}
+
+    <label>Password:</label>
+    {{ form.password }}
+    {{ form.password.errors }}
+
+    <label>Confirm Password:</label>
+    {{ form.conf_pass }}
+    {{ form.conf_pass.errors }}
+
+    <label>Payment Info (optional):</label>
+    {{ form.payment_info }}
+    {{ form.payment_info.errors }}
+    <button type="submit">Register</button>
+  </form>
+
+  <p>Already have an account? <a href="{% url 'accounts:login' %}">Login here</a></p>
+</div>
+{% endblock %}

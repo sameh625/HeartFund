@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}HeartFund | Home{% endblock %}
+{% load static %}
+{% block content %}
+
+<div class="hero-section">
+  {% if user.is_authenticated %}
+  <div class="welcome-message">
+    <h2>
+      Welcome back, <span class="welcome-user">{{ user.first_name}}!</span>
+    </h2>
+  </div>
+  {% endif %}
+
+  <h1 id="head">Together, We Build Dreams</h1>
+  <p>Innovate. Inspire. Impact. Your Support, Our Innovation</p>
+  <div class="hero-buttons">
+    <a href="#content" class="btn-primary">Explore Projects</a>
+    <a href="{% url 'projects:add_project' %}" class="btn-secondary"
+      >Start a Campaign</a
+    >
+  </div>
+
+  <div class="slogans">
+    <h2>Why HeartFund?</h2>
+    <ul>
+      <li>Be the reason someone's dream comes true.</li>
+      <li>Supporting Visionaries Everywhere</li>
+      <li>Fuel the Future, One Idea at a Time</li>
+      <li>Crafting Tomorrow, Today</li>
+      <li>Your Dream, Our Mission</li>
+    </ul>
+  </div>
+</div>
+
+<div class="content" id="content">
+  <h2>Available Projects</h2>
+  <p class="motivation">
+    Choose a project, support a dream, and be part of the change
+  </p>
+
+  <form id="search-form" class="search-bar">
+    <label>Start Date:</label>
+    <input type="date" id="start-date" required />
+    <label>End Date:</label>
+    <input type="date" id="end-date" required />
+    <button class="search" type="submit">Search</button>
+    <select id="order">
+      <option value="latest">Latest</option>
+      <option value="target_desc">Target ↓</option>
+      <option value="target_asc">Target ↑</option>
+      <option value="raised_desc">Raised ↓</option>
+      <option value="raised_asc">Raised ↑</option>
+      <option value="end_asc">Ending Soon</option>
+      <option value="end_desc">Ending Last</option>
+    </select>
+  </form>
+
+  <div id="projects-list" class="projects-container"></div>
+  <form id="csrf-form">{% csrf_token %}</form>
+</div>
+
+<script src="{% static 'js/projects.js' %}"></script>
+<script src="{% static 'js/search.js' %}"></script>
+
+{% endblock %}
+
+<!-- 
+“Together, We Create Tomorrow”
+“Empower Change with Us”
+“Backers Build the Future”
+“Inspire New Possibilities”
+ -->

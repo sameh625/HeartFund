@@ -1,0 +1,145 @@
+.auth-container {
+  margin: 20px auto;
+  background: #fff;
+  min-height: 500px;
+  padding: 6rem 2.5rem 5rem;
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  max-width: 600px;
+  animation: fadeIn 0.4s ease-in-out;
+  margin-top: 60px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.auth-container h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #37353e;
+  font-weight: 700;
+}
+
+.auth-container label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ccd6f6;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.auth-container input:focus {
+  border-color: #37353e;
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.15);
+  outline: none;
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 0.85rem;
+  background: #37353e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+}
+
+.auth-container button:hover {
+  background: #715a5a;
+}
+
+.auth-container button:active {
+  transform: scale(0.98);
+}
+
+/* links */
+.auth-container p {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.auth-container a {
+  color: #37353e;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-container a:hover {
+  text-decoration: underline;
+  color: #715a5a;
+}
+
+/* Django messages */
+.messages {
+  list-style: none;
+  margin: 0 0 1rem 0;
+  padding: 0;
+}
+
+.messages li {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.messages li.success {
+  background: #e6f7e6;
+  color: #237804;
+  border: 1px solid #b7eb8f;
+}
+
+.messages li.error {
+  background: #fff1f0;
+  color: #a8071a;
+  border: 1px solid #ffa39e;
+}
+
+.messages li.warning {
+  background: #fffbe6;
+  color: #ad8b00;
+  border: 1px solid #ffe58f;
+}
+
+.messages li.info {
+  background: #e6f4ff;
+  color: #0958d9;
+  border: 1px solid #91caff;
+}
+
+/* Form errors */
+.form-errors,
+.errorlist {
+  background: #fff1f0;
+  color: #a8071a;
+  border: 1px solid #ffa39e;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  list-style-type: none;
+}

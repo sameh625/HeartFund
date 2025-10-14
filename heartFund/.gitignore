@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+.env/
+*.env
+
+# Django
+*.log
+db.sqlite3
+media/
+
+# IDEs/editors
+.vscode/
+.idea/
+
+# Cursor
+cursor_discuss_website_contents_and_fea.md
