@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       container.innerHTML = "";
 
       if (projects.length === 0) {
-        container.innerHTML = "<p>You have no projects yet.</p>";
+        container.innerHTML = "<p>You have no campaigns yet.</p>";
         return;
       }
 
@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
         card.innerHTML = `
         <h3>${p.title}</h3>
         <p><strong>Target:</strong> ${p.target} EGP</p>
+        <p><strong>Raised:</strong> ${p.current_amount} EGP</p>
+        <p><strong>Duration:</strong> ${p.start_date} → ${p.end_date}</p>
         <button class="edit-btn" onclick="openEditForm(${p.id}, '${p.title}', '${p.details}', ${p.target}, '${p.start_date}', '${p.end_date}')">Edit</button>
         <button class="delete-btn" onclick="deleteProject(${p.id})">Delete</button>
         `;
@@ -35,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   fetchMyProjects();
 
   window.deleteProject = async function (id) {
-    if (!confirm("Are you sure you want to delete this project?")) return;
+    if (!confirm("Are you sure you want to delete this campaign?")) return;
 
     const response = await fetch(`/projects/api/${id}/`, {
       method: "DELETE",
@@ -45,12 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     if (response.ok) {
-      alert("Project deleted!");
+      alert("Campaign deleted!");
       fetchMyProjects();
     } else {
       const error = await response.text();
       console.error(error);
-      alert("Failed to delete project: " + error);
+      alert("Failed to delete campaign: " + error);
     }
   };
 
@@ -64,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ) {
     container.innerHTML = `
       <div class="add-project-container">
-        <h2>Edit Project</h2>
+        <h2>Edit Campaign</h2>
         <form id="edit-form">
           <label>Title</label>
           <input type="text" id="edit-title" value="${title}" required>

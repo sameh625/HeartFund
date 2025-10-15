@@ -198,6 +198,18 @@ nav li:first-child {
   flex-grow: 1;
 }
 
+/* Project cover image */
+.project-cover {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  display: block;
+  background: #f2f2f2;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
 /* Edit and Delete buttons */
 .project-card button.edit-btn {
   background: #007bff;

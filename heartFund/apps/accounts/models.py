@@ -33,12 +33,6 @@ class CustomUser(AbstractBaseUser):
         message="Phone number must be a valid Egyptian mobile number (e.g., 010xxxxxxxx)"
     )
     phone = models.CharField(validators=[phone_regex], max_length=11, unique=True)
-    payment_info = models.CharField(
-        max_length=255,
-        blank=True,
-        null=True,
-        help_text="e.g. PayPal email, bank account number, or wallet ID"
-    )
     is_active = models.BooleanField(default = True)
     is_staff = models.BooleanField(default = False)
     objects = CustomUserManager()

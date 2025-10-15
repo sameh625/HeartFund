@@ -4,13 +4,9 @@ from .models import CustomUser
 class RegisterForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput, label="Password")
     conf_pass = forms.CharField(widget=forms.PasswordInput, label="Confirm Password")
-    payment_info = forms.CharField(
-        max_length=255,
-        required=False
-        )
     class Meta:
         model = CustomUser
-        fields = ["first_name", "last_name","payment_info", "email", "phone"]
+        fields = ["first_name", "last_name", "email", "phone"]
 
     def clean_conf_pass(self):
         password = self.cleaned_data.get("password")

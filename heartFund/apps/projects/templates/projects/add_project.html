@@ -1,10 +1,10 @@
 {% extends "base.html" %}
-{% block title %}Add New Project{% endblock %}
+{% block title %}Add New Campaign{% endblock %}
 {% load static %}
 
 {% block content %}
 <div class="add-project-container">
-  <h2>Add New Project</h2>
+  <h2>Add New Campaign</h2>
 
   <form id="add-project-form">
     {% csrf_token %}
@@ -25,7 +25,7 @@
 
     <label for="cover_image">Cover Image (optional)</label>
     <input type="file" id="cover_image" name="cover_image" accept="image/*">
-    <button class="add" type="submit">Create Project</button>
+    <button class="add" type="submit">Create Campaign</button>
   </form>
 
   <p style="text-align:center; margin-top:1rem;">

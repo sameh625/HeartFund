@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         projectCard.className = "project-card";
 
         projectCard.innerHTML = `
-          ${project.cover_image_url ? `<img class="project-cover" src="${project.cover_image_url}" alt="${project.title}">` : ""}
+          ${project.cover_image_url ? `<img class=\"project-cover\" src=\"${project.cover_image_url}\" alt=\"${project.title}\" loading=\"lazy\">` : ""}
           <h3>${project.title}</h3>
           <p><strong>Publisher:</strong> ${project.owner}</p>
           <p><strong>Target:</strong> ${project.target} EGP</p>
@@ -50,13 +50,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       projectsContainer.innerHTML = `
         <div class="project-detail">
-          ${project.cover_image_url ? `<img class="project-cover" src="${project.cover_image_url}" alt="${project.title}">` : ""}
+          ${project.cover_image_url ? `<img class=\"project-cover\" src=\"${project.cover_image_url}\" alt=\"${project.title}\" loading=\"lazy\">` : ""}
           <h2>${project.title}</h2>
           <p><strong>Publisher:</strong> ${project.owner}</p>
           <p><strong>Target:</strong> ${project.target} EGP</p>
           <p><strong>Raised:</strong> ${project.current_amount} EGP</p>
           <div class="progress"><div class="bar" style="width:${project.progress_percent || 0}%"></div></div>
-          <p><strong>Support:</strong> ${project.payment_info || ""}</p>
           <p><strong>Details:</strong> ${project.details}</p>
           <p><strong>Duration:</strong> ${project.start_date} → ${project.end_date}</p>
           ${project.can_donate ? `

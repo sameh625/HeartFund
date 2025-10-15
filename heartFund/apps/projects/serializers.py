@@ -5,7 +5,6 @@ from .models import Project, Contribution
 
 class ProjectSerializer(serializers.ModelSerializer):
     owner = serializers.SerializerMethodField()
-    payment_info = serializers.CharField(source="owner.payment_info", read_only=True)
     cover_image_url = serializers.SerializerMethodField(read_only=True)
     current_amount = serializers.SerializerMethodField(read_only=True)
     progress_percent = serializers.SerializerMethodField(read_only=True)
@@ -22,7 +21,6 @@ class ProjectSerializer(serializers.ModelSerializer):
             "start_date",
             "end_date",
             "owner",
-            "payment_info",
             "cover_image",
             "cover_image_url",
             "current_amount",
@@ -69,7 +67,6 @@ class ProjectSerializer(serializers.ModelSerializer):
 
     def get_can_donate(self, obj):
         request = self.context.get("request")
-        # Show donate UI unless fully funded. If logged-in owner, still hide.
         if request and getattr(request, "user", None) and request.user.is_authenticated:
             if obj.owner_id == request.user.id:
                 return False
