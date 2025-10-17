@@ -113,8 +113,7 @@ templates/
 ---
 
 ## Demo
-[Watch the demo](https://github.com/user-attachments/assets/4447b60a-9ad1-4b9a-9f64-ded944a7955c)
-
+[Heartfund.webm](https://github.com/user-attachments/assets/0414f3de-abc0-4c58-bb28-b2fc4eb23f6c)
 ---
 
 ## Notes
